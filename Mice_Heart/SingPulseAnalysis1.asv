@@ -1,0 +1,19 @@
+clear all
+close all
+
+fname=['/home/nuria/Documentos/OM/MOG1/WT_120825_1/WT_110ms.tif'];
+% fname=['/home/nuria/Escritorio/OM_Mouse _new/Mouse/WTnew11_300ms.tif']
+nT = 2000;
+n0 = 1;
+% number of frames to analyze
+n = nT - n0;
+% number of pixels
+pixels = 128;
+
+imag1 = double(zeros(pixels,pixels,n));
+
+for c = 1:n
+    imag1(:,:,c) = double(imread(fname,c+n0));
+end
+
+imag2 = imag1;
